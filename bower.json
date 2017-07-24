@@ -25,5 +25,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "axios": "^0.16.2"
+  }
 }

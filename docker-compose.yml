@@ -6,3 +6,11 @@ web:
   ports:
     - "8080:80"
 
+# docker-compose run npm install
+npm:
+    image: node
+    volumes:
+      - .:/data
+    working_dir: /data
+    entrypoint: ['npm', '--no-bin-link']
+

@@ -582,6 +582,23 @@ var HiPay = (function (HiPay) {
 
 
 console.info('post');
+            var appliance = new window.XMLHttpRequest();
+            appliance.onreadystatechange = function() {
+                if (appliance.readyState === 4) {
+                    if (appliance.status === 200) {
+                        // success, use appliance.responseText
+                    } else {
+                        // error
+                    }
+                }
+            };
+            appliance.open("POST", endpoint, true);
+            appliance.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            appliance.withCredentials = true; // to support sending cookies with CORS
+            appliance.send(requestParams);
+
+
+
             return axios.post(endpoint,requestParams,config)
                 .then(function(responseJson) {
                     // console.log(responseJson);
@@ -606,7 +623,29 @@ console.info('post');
 
                     }
                 }).catch(function (error) {
-                    console.info(error);
+
+
+                    /* IE */
+                    console.log(requestParams);
+
+
+
+
+
+
+                    // var appliance = new window.XDomainRequest();
+                    // appliance.onload = function() {
+                    //     // do something with appliance.responseText
+                    // };
+                    // appliance.onerror = function() {
+                    //     // error handling
+                    // };
+                    //
+                    // // (endpoint,requestParams,config
+                    // appliance.open("POST", endpoint, true);
+                    // appliance.send(requestParams);
+
+
                     return Promise.reject(new _APIError(error));
                 });
         }
