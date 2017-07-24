@@ -215,7 +215,7 @@
             var expiryYear = myCard.CardJs('expiryYear');
             var cvc = myCard.CardJs('cvc');
 
-            console.info(cardNumber);
+//            console.info(cardNumber);
 
 
             var params = {

@@ -130,8 +130,8 @@ var HiPay = (function (HiPay) {
 
     // Define property helper
     var _defineProperties = function(object, properties) {
-        console.log("properties");
-        console.log(properties);
+        // console.log("properties");
+        // console.log(properties);
 
         for (var key in properties) {
             // properties[key].propertyDescriptors = Object.assign({}, {enumerable: true, writable: false, configurable: false}, properties[key].propertyDescriptors || {});
@@ -142,8 +142,8 @@ var HiPay = (function (HiPay) {
         var mapping = _extend({}, object.prototype._mapping || {}, properties);
 
 
-        console.log("mapping");
-        console.log(mapping);
+        // console.log("mapping");
+        // console.log(mapping);
         if (_canDefineProperty) {
             Object.defineProperties(object.prototype, {
                 "_mapping": {
@@ -153,8 +153,8 @@ var HiPay = (function (HiPay) {
                     value: mapping
                 }
             });
-            console.log("object._mapping");
-            console.log(object._mapping);
+            // console.log("object._mapping");
+            // console.log(object._mapping);
         } else {
             object.prototype._mapping = mapping;
         }
@@ -361,11 +361,11 @@ var HiPay = (function (HiPay) {
 
         for (var key in payload || {}) {
 
-            console.log("key");
-            console.log(key);
-
-            console.log("instance._mapping");
-            console.log(instance._mapping);
+            // console.log("key");
+            // console.log(key);
+            //
+            // console.log("instance._mapping");
+            // console.log(instance._mapping);
             // $.each(payload || {}, function (key, val) {
             if (typeof instance._mapping === 'object') {
 
@@ -406,16 +406,16 @@ var HiPay = (function (HiPay) {
     Hipay.Token = function (responseJSON) {
 
 
-        console.log('responseJSON');
-        console.log(responseJSON);
+        // console.log('responseJSON');
+        // console.log(responseJSON);
         var payload;
 
         if (typeof responseJSON.data !== 'undefined') {
             payload = responseJSON.data;
         }
 
-        console.log('payload');
-        console.log(payload);
+        // console.log('payload');
+        // console.log(payload);
 
         if (typeof payload === 'object') {
             _processObjectPayload(this, $.extend({}, payload, {
@@ -452,19 +452,10 @@ var HiPay = (function (HiPay) {
         // console.log("payload");
         // console.log(payload.token);
         _processObjectPayload(context, payload,  function (key, val){
-            switch (key) {
-                case 'token':
-
-                // case 'menu_name':
-                //     return SnapCar.getTextInLocale(val);
+            // switch (key) {
+                // case 'token':
                 //     break;
-                // case 'meeting_points':
-                // case 'meeting_points_nameboard':
-                //     return $.map(val, function (payload) {
-                //         return SnapCar.MeetingPoint.populateProperties(new SnapCar.MeetingPoint(), payload);
-                //     });
-                //     break;
-            }
+            // }
         });
 
 
@@ -589,10 +580,12 @@ var HiPay = (function (HiPay) {
 
 
 
+
+console.info('post');
             return axios.post(endpoint,requestParams,config)
                 .then(function(responseJson) {
-                    console.log(responseJson);
-
+                    // console.log(responseJson);
+                    console.info(responseJson);
                     if( typeof responseJson['code'] != 'undefined' )  {
 
 
@@ -602,10 +595,10 @@ var HiPay = (function (HiPay) {
                     else {
 
                        var cardToken = new Hipay.Token(responseJson);
-                        console.log("Hipay.cardToken");
+                        // console.log("Hipay.cardToken");
                         cardToken.constructor.populateProperties(cardToken, responseJson.data);
-                        console.log("Hipay.cardToken");
-                        console.log(Hipay.cardToken);
+                        // console.log("Hipay.cardToken");
+                        // console.log(Hipay.cardToken);
 
                         // Hipay.cardToken.hydrate(responseJson);
 
@@ -613,7 +606,7 @@ var HiPay = (function (HiPay) {
 
                     }
                 }).catch(function (error) {
-                    console.log(error);
+                    console.info(error);
                     return Promise.reject(new _APIError(error));
                 });
         }

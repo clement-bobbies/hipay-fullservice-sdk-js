@@ -1,0 +1,138 @@
+{
+  "plist": {
+    "dict": {
+      "key": [
+        "visa",
+        "mastercard",
+        "diners",
+        "american-express",
+        "maestro"
+      ],
+      "dict": [
+        {
+          "key": [
+            "ranges",
+            "lengths",
+            "format"
+          ],
+          "array": [
+            {
+              "string": "{4,1}"
+            },
+            {
+              "string": "{16,1}"
+            },
+            {
+              "integer": [
+                "4",
+                "4",
+                "4"
+              ]
+            }
+          ]
+        },
+        {
+          "key": [
+            "ranges",
+            "lengths",
+            "format"
+          ],
+          "array": [
+            {
+              "string": "{51,5}"
+            },
+            {
+              "string": "{16,1}"
+            },
+            {
+              "integer": [
+                "4",
+                "4",
+                "4"
+              ]
+            }
+          ]
+        },
+        {
+          "key": [
+            "ranges",
+            "lengths",
+            "format"
+          ],
+          "array": [
+            {
+              "string": [
+                "{300,6}",
+                "{38,2}",
+                "{2014,1}",
+                "{2149,1}",
+                "{309,1}",
+                "{36,1}"
+              ]
+            },
+            {
+              "string": "{14,2}"
+            },
+            {
+              "integer": [
+                "4",
+                "6"
+              ]
+            }
+          ]
+        },
+        {
+          "key": [
+            "ranges",
+            "lengths",
+            "format"
+          ],
+          "array": [
+            {
+              "string": [
+                "{34,1}",
+                "{37,1}"
+              ]
+            },
+            {
+              "string": "{15,1}"
+            },
+            {
+              "integer": [
+                "4",
+                "6"
+              ]
+            }
+          ]
+        },
+        {
+          "key": [
+            "ranges",
+            "lengths",
+            "format"
+          ],
+          "array": [
+            {
+              "string": [
+                "{50,1}",
+                "{56,14}"
+              ]
+            },
+            {
+              "string": "{12,7}"
+            },
+            {
+              "integer": [
+                "4",
+                "4",
+                "4",
+                "4"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "_version": "1.0"
+  }
+}
